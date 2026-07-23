@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Portfolio</title>
+  <meta name="description" content="AI開発者のポートフォリオ。Claude Code を用いたスキル開発・サブエージェント自動化・Webアプリ制作・SEO記事執筆などの実績を、静かなエディトリアルデザインで紹介します。" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Portfolio" />
+  <meta property="og:description" content="AI開発者のポートフォリオ。スキル開発・サブエージェント自動化・Webアプリ制作・SEO記事執筆などの実績を紹介します。" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="AI Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Portfolio" />
+  <meta name="twitter:description" content="AI開発者のポートフォリオ。スキル開発・サブエージェント自動化・Webアプリ制作・SEO記事執筆などの実績を紹介します。" />
+
+  <!-- Favicon (inline SVG emoji) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Noto Serif JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__fill" id="progressFill"></div>
+  </div>
+
+  <!-- Sticky minimal nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__mark">Atelier&nbsp;AI</a>
+      <nav class="nav__links" aria-label="メインナビゲーション">
+        <a href="#work" class="nav__link" data-nav="work">Work</a>
+        <a href="#gallery" class="nav__link" data-nav="gallery">Gallery</a>
+        <a href="#about" class="nav__link" data-nav="about">About</a>
+        <a href="#contact" class="nav__link" data-nav="contact">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile slide-in menu -->
+    <nav class="nav__mobile" id="mobileMenu" aria-label="モバイルナビゲーション">
+      <a href="#work" class="nav__mobileLink">Work</a>
+      <a href="#gallery" class="nav__mobileLink">Gallery</a>
+      <a href="#about" class="nav__mobileLink">About</a>
+      <a href="#contact" class="nav__mobileLink">Contact</a>
+    </nav>
+  </header>
+  <div class="nav__scrim" id="navScrim" aria-hidden="true"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__inner reveal">
+        <span class="hero__kicker">AI Developer &amp; Prompt Craft</span>
+        <h1 class="hero__title">AIと、ていねいに。<br />作るための道具から、作ります。</h1>
+        <p class="hero__sub">スキル設計・サブエージェント自動化・Webアプリ制作。小さな仕組みを積み重ねて、再現性のあるものづくりを届けます。</p>
+        <a href="#work" class="btn btn--primary hero__cta">制作を見る</a>
+        <span class="hero__accent" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="divider" aria-hidden="true"></span>
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section__title">制作実績</h2>
+        </div>
+        <div class="grid" id="workGrid"></div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section--tint" id="gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="divider" aria-hidden="true"></span>
+          <span class="eyebrow">Gallery / Museum</span>
+          <h2 class="section__title">ギャラリー</h2>
+        </div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="divider" aria-hidden="true"></span>
+          <span class="eyebrow">About</span>
+          <h2 class="section__title">わたしについて</h2>
+        </div>
+        <div class="about reveal">
+          <p class="about__lead">AIを「魔法」ではなく「道具」として扱い、日々の制作を少しずつ楽にする仕組みづくりを続けています。曖昧な要望を検証可能な条件へ翻訳すること、そして壊れにくい構成で残すことを大切にしています。</p>
+          <p class="about__text">Claude Code を軸に、スキル開発・サブエージェントによる自動化・軽量なWebアプリ制作・SEO記事執筆まで、企画から検証までを一気通貫で手がけます。派手さよりも、静かに効く再現性を。</p>
+          <div class="about__tags" aria-label="得意領域">
+            <span class="badge">Claude Code</span>
+            <span class="badge">Skill Design</span>
+            <span class="badge">SubAgent</span>
+            <span class="badge">Automation</span>
+            <span class="badge">Web / HTML</span>
+            <span class="badge">SEO Writing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--tint" id="contact">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="divider" aria-hidden="true"></span>
+          <span class="eyebrow">Contact</span>
+          <h2 class="section__title">おしごとのご相談</h2>
+        </div>
+        <div class="contact reveal">
+          <p class="contact__text">ご依頼・ご質問はお気軽に。静かに、ていねいにお返事します。</p>
+          <div class="contact__actions">
+            <a href="mailto:hangetu22@gmail.com" class="btn btn--primary">メールを送る</a>
+            <a href="https://github.com/hangetu22-ops" class="btn btn--secondary" target="_blank" rel="noopener">GitHub を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__mark">Atelier&nbsp;AI</span>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#work">Work</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="footer__copy">© 2026 Atelier AI. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Modal / Lightbox -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" id="modalClose" aria-label="閉じる">&times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
