@@ -34,8 +34,9 @@
   --xl: 32px;
   --xxl: 48px;
 
-  /* Type */
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  /* Type — adult-cute: hand-pen display + rounded gothic body */
+  --display: "Klee One", "Zen Maru Gothic", "Yu Mincho", serif;
+  --serif: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
   --mono: "SF Mono", "Fira Code", "Consolas", monospace;
 
   --maxw: 1200px;
@@ -88,6 +89,18 @@ a {
 
 h1, h2, h3, p {
   margin: 0;
+}
+
+/* Headings & wordmarks use the hand-pen display face */
+.hero__title,
+.section__title,
+.nav__mark,
+.footer__mark,
+.card__title,
+.modal__title,
+h3 {
+  font-family: var(--display);
+  font-weight: 600;
 }
 
 /* ---------- Layout ---------- */
@@ -323,10 +336,10 @@ h1, h2, h3, p {
 }
 
 .hero__title {
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: .15em;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: .04em;
   color: var(--text);
   margin-bottom: var(--lg);
 }
