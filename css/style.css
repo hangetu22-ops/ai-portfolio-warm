@@ -65,6 +65,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Decorative full-page background (GPT Image 2 / 2K), kept subtle for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url(../assets/img/bg.webp) center center / cover no-repeat;
+  opacity: .5;
+  z-index: -1;
+  pointer-events: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -95,7 +106,7 @@ h1, h2, h3, p {
 }
 
 .section--tint {
-  background: var(--soft-tint);
+  background: rgba(255, 240, 243, .78);
 }
 
 /* ---------- Progress bar ---------- */
@@ -269,15 +280,36 @@ h1, h2, h3, p {
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--bg-warm);
-  padding: 140px 0 120px;
+  position: relative;
+  min-height: clamp(560px, 72vh, 760px);
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg,
+      rgba(250, 249, 245, 0) 30%,
+      rgba(250, 249, 245, .45) 52%,
+      rgba(250, 249, 245, .92) 74%),
+    url(../assets/img/hero.webp) center right / cover no-repeat,
+    var(--bg-warm);
+  padding: 0;
 }
 
 .hero__inner {
   max-width: var(--maxw);
+  width: 100%;
   margin: 0 auto;
   padding: 0 var(--xl);
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero__copy {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero__accent {
+  margin-left: 0;
 }
 
 .hero__kicker {
@@ -313,7 +345,7 @@ h1, h2, h3, p {
   height: 3px;
   background: var(--primary);
   border-radius: 2px;
-  margin: var(--xxl) auto 0;
+  margin: var(--xxl) 0 0;
 }
 
 /* ---------- Buttons ---------- */
@@ -786,7 +818,35 @@ h1, h2, h3, p {
   }
 
   .hero {
-    padding: 96px 0 72px;
+    display: block;
+    min-height: auto;
+    padding: 0 0 56px;
+    background:
+      linear-gradient(180deg,
+        rgba(250, 249, 245, 0) 46%,
+        rgba(250, 249, 245, .94) 72%),
+      url(../assets/img/hero.webp) top center / 100% auto no-repeat,
+      var(--bg-warm);
+  }
+
+  .hero__inner {
+    display: block;
+    padding-top: 58vw; /* clear the 16:9 illustration shown full-width on top */
+  }
+
+  .hero__copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__accent {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero__title {
