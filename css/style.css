@@ -342,6 +342,12 @@ h3 {
   letter-spacing: .04em;
   color: var(--text);
   margin-bottom: var(--lg);
+  word-break: keep-all;
+}
+
+/* Each phrase on its own line so 作ります。 never splits */
+.hero__line {
+  display: block;
 }
 
 .hero__sub {
@@ -863,7 +869,8 @@ h3 {
   }
 
   .hero__title {
-    letter-spacing: .08em;
+    font-size: 25px;
+    letter-spacing: .04em;
   }
 
   .nav__links {
